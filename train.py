@@ -141,7 +141,7 @@ def train(args):
             x_0_predict = netG(noise, latent_z)
             D_fake = netD(x_0_predict)
             
-            err = args.tau * torch.sum(((x_0_predict-noise).view(noise.size(0), -1))**2, dim=1) - D_fake
+            err = 0.5 * args.tau * torch.sum(((x_0_predict-noise).view(noise.size(0), -1))**2, dim=1) - D_fake
             err = err.mean()
             err.backward()
             optimizerG.step()
