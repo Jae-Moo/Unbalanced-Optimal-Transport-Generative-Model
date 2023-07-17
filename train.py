@@ -121,7 +121,7 @@ def train(args):
             x_0_predict = netG(noise, latent_z)
             D_fake = netD(x_0_predict)
             
-            errD_fake = phi_star1(D_fake - 0.5 * args.tau * torch.sum(((x_0_predict-noise).view(noise.size(0), -1))**2, dim=1))
+            errD_fake = phi_star1(D_fake - args.tau * torch.sum(((x_0_predict-noise).view(noise.size(0), -1))**2, dim=1))
             errD_fake = errD_fake.mean()
             errD_fake.backward()
             errD = errD_real + errD_fake
@@ -141,7 +141,7 @@ def train(args):
             x_0_predict = netG(noise, latent_z)
             D_fake = netD(x_0_predict)
             
-            err = 0.5 * args.tau * torch.sum(((x_0_predict-noise).view(noise.size(0), -1))**2, dim=1) - D_fake
+            err = args.tau * torch.sum(((x_0_predict-noise).view(noise.size(0), -1))**2, dim=1) - D_fake
             err = err.mean()
             err.backward()
             optimizerG.step()
