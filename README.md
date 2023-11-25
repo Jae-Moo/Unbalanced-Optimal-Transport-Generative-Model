@@ -1,4 +1,7 @@
-# Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport
+# Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport (Neurips, 2023)
+
+https://arxiv.org/abs/2305.14777
+
 <p align="middle">
   <img src="assets/cifar10_main.png" width="49%" />
   <img src="assets/celeba_main.png" width="49%" /> 
