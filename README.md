@@ -4,12 +4,12 @@
   <img src="assets/celeba_main.png" width="49%" /> 
 </p>
 We propose a novel generative model using the semi-dual formulation of Unbalanced Optimal Transport (UOT). This approach provides robustness against outliers, stability during training, and fast convergence. Our algorithm is simple, but performs extremely well, achieving FID scores of 2.97 on CIFAR-10 and 5.80 on CelebA-HQ-256.
-Precisely, the semi-dual form of UOT problem can be reduced into following objective:
+Precisely, the semi-dual form of the UOT problem can be reduced to the following objective:
 
-$$\mathcal{L}_{v_{\phi}, T_{\theta}}=\inf_{v_\phi}\left[ \int_{\mathcal{X}} \Psi_1^* \left( -\inf_{T_\theta} \left[c\left(x,T_\theta(x)\right)-v\left(T_\theta(x)\right)\right] \right) d\mu(x) + \int_{\mathcal{Y}} \Psi^*_2\left(-v(y)\right) d\nu(y) \right],$$
+$$\inf_{v_\phi}\left[ \int_{\mathcal{X}} \Psi_1^* \left( -\inf_{T_\theta} \left[c\left(x,T_\theta(x)\right)-v\left(T_\theta(x)\right)\right] \right) d\mu(x) + \int_{\mathcal{Y}} \Psi^*_2\left(-v(y)\right) d\nu(y) \right],$$
 
 where $v_\phi$ is a discrimiator (potential), and $T_\theta$ is a generator (OT-map).
-Here, $\Psi^*$ should be non-decreasing, differentiable, convex function.
+Here, $\Psi^*$ should be a non-decreasing, differentiable, convex function.
 
 ## Training UOTM ##
 We use the following commands for training UOTM.
@@ -49,7 +49,7 @@ python train_toy.py --exp 1d-gaussian-mixture \
     --batch_size 256 --savepath train_logs/GM/GM_uot
 ```
 #### Outlier Experiment ####
-We train image outlier experiment using 4 32-GB V100 GPU.
+We train image outlier experiments using 4 32-GB V100 GPU.
 ```
 python train.py --dataset cifar10+mnist --exp kl_anomaly --phi1 kl --phi2 kl
 ```
@@ -73,11 +73,11 @@ python train.py --dataset celeba_256 \\
 
 
 ## Pretrained Checkpoints ##
-Pretrained checkpoints on CIFAR-10 and CelebA HQ 256 will be available in soon. 
+Pretrained checkpoints on CIFAR-10 and CelebA HQ 256 will be available soon. 
 
 
 ## Bibtex ##
-Cite our paper using the following bibtex item:
+Cite our paper using the following BibTeX item:
 ```
 @misc{choi2023generative,
       title={Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport}, 
