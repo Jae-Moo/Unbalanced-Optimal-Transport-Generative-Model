@@ -75,10 +75,6 @@ python train.py --dataset celeba_256 \\
 ```
 
 
-## Pretrained Checkpoints ##
-Pretrained checkpoints on CIFAR-10 and CelebA HQ 256 will be available soon. 
-
-
 ## Bibtex ##
 Cite our paper using the following BibTeX item:
 ```
