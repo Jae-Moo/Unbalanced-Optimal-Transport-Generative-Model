@@ -78,12 +78,11 @@ python train.py --dataset celeba_256 \\
 ## Bibtex ##
 Cite our paper using the following BibTeX item:
 ```
-@misc{choi2023generative,
-      title={Generative Modeling through the Semi-dual Formulation of Unbalanced Optimal Transport}, 
-      author={Jaemoo Choi and Jaewoong Choi and Myungjoo Kang},
-      year={2023},
-      eprint={2305.14777},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{choi2024generative,
+  title={Generative modeling through the semi-dual formulation of unbalanced optimal transport},
+  author={Choi, Jaemoo and Choi, Jaewoong and Kang, Myungjoo},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2024}
 }
 ```
